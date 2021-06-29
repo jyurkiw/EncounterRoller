@@ -10,12 +10,12 @@ install:
 
 before_build:
   - ps: New-Item -ItemType File -Path WORKSPACE
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 build_script:
   - ps: bazel build //EncounterRoller
 
 after_build:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - ps: 7z a EncounterRoller.zip %APPVEYOR_BUILD_FOLDER%\bazel-bin/EncounterRoller/EncounterRoller.exe
   - ps: 7z a EncounterRoller.zip %APPVEYOR_BUILD_FOLDER%\bazel-bin/EncounterRoller/EncounterRoller.zip
 
