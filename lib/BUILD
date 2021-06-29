@@ -15,7 +15,7 @@ py_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
-        "//EncounterRoller/lib:template_json_lib"
+        "//EncounterRoller/lib:template_json_lib",
     ],
 )
 
@@ -26,8 +26,8 @@ py_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
+        ":settings_manager_lib",
         ":table_manager_lib",
-        ":settings_manager_lib"
     ],
 )
 
