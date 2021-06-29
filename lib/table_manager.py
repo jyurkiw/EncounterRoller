@@ -34,6 +34,10 @@ class TableManager(object):
         file_path = self.get_table_file_name(True)
         shutil.copyfile(file_path,
             os.path.join(self.tables_dir, os.path.basename(file_path)))
+
+    @property
+    def table_path(self):
+        return os.path.join(self.tables_dir, self.get_table_file_name(self.settings.current_table, True))
     
     def get_table_file_name(self, name, filename=False):
         """Get the file name of the passed table.

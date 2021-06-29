@@ -20,6 +20,18 @@ py_library(
 )
 
 py_library(
+    name = "encounter_builder_lib",
+    srcs = [
+        "encounter_builder.py",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":table_manager_lib",
+        ":settings_manager_lib"
+    ],
+)
+
+py_library(
     name = "xp_lib",
     srcs = [
         "xp.py",

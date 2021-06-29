@@ -5,6 +5,8 @@ py_binary(
     visibility = ["//visibility:public"],
     deps = [
         "//EncounterRoller/lib:settings_manager_lib",
-        "//EncounterRoller/lib:table_manager_lib"
+        "//EncounterRoller/lib:table_manager_lib",
+        "//EncounterRoller/lib:encounter_builder_lib",
+        "//EncounterRoller/lib:xp_lib"
     ],
 )
