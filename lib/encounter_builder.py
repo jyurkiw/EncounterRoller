@@ -71,9 +71,10 @@ class EncounterBuilder(object):
         limits = self.calculate_xp_limits()
 
         for tier, encounter in self.encounters.items():
-            print('{0} (Max XP: {1}):'.format(tier.title(), limits[tier]))
-
             multiplier = self.get_xp_multiplier(len(encounter))
+            effective_xp = int(sum([self.get_monster_xp(m) for m in encounter]) * multiplier)
+            print('{0} (Total Effective XP: {1}/Max XP: {2}):'.format(tier.title(), effective_xp, limits[tier]))
+
             for monster in encounter:
                 monster_xp = self.get_monster_xp(monster)
                 print('\t{0}\t(CR: {1})\n\t\tXP: {2}/Effective XP: {3}'.format(
