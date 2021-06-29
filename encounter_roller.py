@@ -66,4 +66,4 @@ elif args.op == 'generate_encounter':
 elif args.op == 'list_xp_limits':
     EncounterBuilder(settings, TableManager(settings)).list_xp_limits()
 
-print(args)
+# print(args)
