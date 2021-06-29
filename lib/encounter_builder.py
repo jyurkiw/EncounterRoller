@@ -60,8 +60,6 @@ class EncounterBuilder(object):
                     if (total_xp + xp) * float(self.get_xp_multiplier(len(encounters[tier]) + 1)) < limit:
                         encounters[tier].append(monster)
                         total_xp += xp
-                    else:
-                        break
 
         self.encounters = encounters
         return self
