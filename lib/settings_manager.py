@@ -67,7 +67,7 @@ class SettingsManager(object):
 
     @property
     def level_of_characters(self):
-        return self._num_characters
+        return self._level_characters
 
     @level_of_characters.setter
     def level_of_characters(self, value):
