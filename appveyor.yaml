@@ -13,6 +13,7 @@ before_build:
 
 build_script:
   - ps: dir
+  - ps: dir ../
   - ps: bazel build //EncounterRoller
 
 after_build:
