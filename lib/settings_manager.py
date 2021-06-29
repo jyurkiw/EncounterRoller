@@ -85,7 +85,7 @@ class SettingsManager(object):
 
     @property
     def current_table(self):
-        return self._current_table['name']
+        return self._current_table
 
     @current_table.setter
     def current_table(self, value):
