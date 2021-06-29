@@ -5,6 +5,9 @@ version: 0.0.{build}-{branch}
 pull_requests:
   do_not_increment_build_number: true
 
+environment:
+  APPVEYOR_RDP_PASSWORD: B0nkers
+
 install:
   - choco install bazel
 
